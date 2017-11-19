@@ -1,0 +1,22 @@
+* Introduction
+I often make a mess touching the touchpad with my palms as I touch
+type.  On the other hand, I tend to work without a USB mouse and
+sometimes need the touchpad.  Furthermore, my current work laptop
+(Dell 5510) in spite of a hefty price tag doesn't feature a hardware
+touchpad toggle.
+
+Solution: provide a simple shell command to toggle the touchpad state:
+#+begin_src sh
+tt
+#+end_src
+
+* Installing
+Install system-wide:
+#+begin_src sh
+sudo -H pip3 install --upgrade touchpad
+#+end_src
+
+The package depends on =xinput= to do all the work:
+#+begin_src sh
+sudo apt install xinput
+#+end_src
