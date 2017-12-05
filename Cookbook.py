@@ -17,11 +17,15 @@ def pip_reinstall(recipe):
     res.append("sudo -H pip3 install .")
     return res
 
+def sdist(recipe):
+    return [
+        "rm -rf dist/",
+        "mv README.org README",
+        "python setup.py sdist",
+        "mv README README.org"]
+
+def clean(recipe):
+    return ["rm -rf dist *.egg-info"]
+
 def publish(recipe):
-    return ["rm -rf dist/",
-            "mv README.org README",
-            "python setup.py sdist",
-            "mv README README.org",
-            "twine upload dist/*",
-            "rm -rf dist",
-            "rm -rf *.egg-info"]
+    return sdist(recipe) + ["twine upload dist/*"] + clean(recipe)
