@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='touchpad',
-    version='0.1.1',
+    version='0.1.2',
     description='Toggle touchpad on/off',
     packages=find_packages(),
     url='https://github.com/abo-abo/touchpad-toggle',

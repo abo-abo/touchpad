@@ -1,4 +1,3 @@
-#!/usr/bin/python3
 #* Imports
 import re
 import time
@@ -52,7 +51,3 @@ def main():
         disable_all_touchpads()
     else:
         enable_all_touchpads()
-
-#* Script
-if __name__ == "__main__":
-    main()

@@ -19,9 +19,9 @@ def pip_reinstall(recipe):
 
 def publish(recipe):
     return ["rm -rf dist/",
+            "mv README.org README",
             "python3 setup.py sdist",
-            "twine upload dist/*"]
-
-def clean(recipe):
-    return ["rm -rf dist",
+            "mv README README.org",
+            "twine upload dist/*",
+            "rm -rf dist",
             "rm -rf *.egg-info"]
