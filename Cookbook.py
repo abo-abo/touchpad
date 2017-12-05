@@ -20,7 +20,7 @@ def pip_reinstall(recipe):
 def publish(recipe):
     return ["rm -rf dist/",
             "mv README.org README",
-            "python3 setup.py sdist",
+            "python setup.py sdist",
             "mv README README.org",
             "twine upload dist/*",
             "rm -rf dist",
