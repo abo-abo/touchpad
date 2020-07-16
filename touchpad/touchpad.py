@@ -18,10 +18,12 @@ def get_ids():
     return el.cl_remove_if_not(touchpad_p, get_all_ids())
 
 def set_touchpad_enabled(iid):
-    return sc("xinput set-prop {iid} \"Device Enabled\" 1")
+    print(lf("xinput enable {iid}"))
+    return sc("xinput enable {iid}")
 
 def set_touchpad_disabled(iid):
-    return sc("xinput set-prop {iid} \"Device Enabled\" 0")
+    print(lf("xinput disable {iid}"))
+    return sc("xinput disable {iid}")
 
 def touchpad_props(iid):
     return sc("xinput --list-props {iid}")
