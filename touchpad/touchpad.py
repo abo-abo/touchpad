@@ -15,7 +15,7 @@ def touchpad_p(iid):
     return re.search("touchpad", xinput, re.IGNORECASE)
 
 def get_ids():
-    return el.cl_remove_if_not(touchpad_p, get_all_ids())
+    return filter(touchpad_p, get_all_ids())
 
 def set_touchpad_enabled(iid):
     print(lf("xinput enable {iid}"))
@@ -49,7 +49,7 @@ def enable_all_touchpads():
         time.sleep(1)
 
 def main():
-    if all(el.mapcar(touchpad_enabled_p, get_ids())):
+    if all([touchpad_enabled_p(x) for x in get_ids()]):
         disable_all_touchpads()
     else:
         enable_all_touchpads()
