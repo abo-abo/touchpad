@@ -27,7 +27,7 @@
   (interactive)
   (let ((cmd "tt"))
     (cond ((not (executable-find "tt"))
-           (error "Install touchpad with: pip install touchpad"))
+           (error "Install touchpad with: pip3 install touchpad"))
           ((not (executable-find "xinput"))
            (error "Install xinput with: apt-get install xinput"))
           (t
